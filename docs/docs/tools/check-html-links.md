@@ -33,6 +33,7 @@ npm i -D check-html-links
 | root-dir            | string  | the root directory to serve files from. Defaults to the current working directory                   |
 | ignore-link-pattern | string  | do not check links matching the pattern                                                             |
 | continue-on-error   | boolean | if present it will not exit with an error code - useful while writing or for temporary passing a ci |
+| validate-externals  | boolean | if present it will validate external links making a request to the linked url                       |
 
 ## Usage Examples
 
@@ -45,6 +46,9 @@ npx check-html-links _site --ignore-link-pattern "/users/*" "/users/**/*"
 
 # ignore all links like <a href="/users/123"> & <a href="/users/123/details">
 npx check-html-links _site --ignore-link-pattern "/users/*" "/users/**/*"
+
+# check external urls
+npx check-html-links _site --validate-externals
 ```
 
 ## Example Output
